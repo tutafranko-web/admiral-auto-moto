@@ -135,28 +135,28 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 /* ===== HERO ===== */
 .am-hero {
   display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 540px;
+  min-height: auto;
 }
 .am-hero-left {
-  padding: 48px 48px;
+  padding: 36px 48px 40px;
   display: flex; flex-direction: column; justify-content: center;
 }
 .am-hero-tag {
   display: inline-block;
   background: var(--gold-light); color: var(--gold);
   font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase;
-  padding: 5px 12px; border-radius: 4px; margin-bottom: 20px;
+  padding: 5px 12px; border-radius: 4px; margin-bottom: 14px;
   width: fit-content;
 }
 .am-hero-h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 46px; line-height: 1.13; font-weight: 700;
-  margin-bottom: 18px; letter-spacing: -1px;
+  font-size: 40px; line-height: 1.15; font-weight: 700;
+  margin-bottom: 14px; letter-spacing: -1px;
 }
 .am-hero-h1 em { font-style: italic; color: var(--gold); }
 .am-hero-sub {
-  font-size: 15px; color: var(--text2);
-  line-height: 1.75; max-width: 440px; margin-bottom: 36px;
+  font-size: 14px; color: var(--text2);
+  line-height: 1.7; max-width: 440px; margin-bottom: 24px;
 }
 .am-hero-btns { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 .am-hero-right {
@@ -177,13 +177,13 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 
 /* Hero Mini Gallery */
 .am-hero-mini-gallery {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
-  margin-top: 32px; padding-top: 28px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-top: 24px; padding-top: 20px;
   border-top: 1px solid var(--border);
 }
 .am-hero-mini-item {
   position: relative; border-radius: 10px; overflow: hidden;
-  height: 90px; display: block;
+  height: 80px; display: block;
 }
 .am-hero-mini-item img {
   width: 100%; height: 100%; object-fit: cover;
