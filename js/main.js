@@ -115,19 +115,29 @@ function initFilters() {
   const items = document.querySelectorAll('[data-category]');
   if (!buttons.length || !items.length) return;
 
+  function applyFilter(filter) {
+    buttons.forEach(b => {
+      b.classList.toggle('active', b.dataset.filter === filter);
+    });
+    items.forEach(item => {
+      const cat = item.dataset.category || '';
+      const match = filter === 'all' || cat === filter || cat.includes(filter);
+      item.style.display = match ? '' : 'none';
+    });
+  }
+
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      items.forEach(item => {
-        const cat = item.dataset.category || '';
-        const match = filter === 'all' || cat === filter;
-        item.style.display = match ? '' : 'none';
-      });
+      applyFilter(btn.dataset.filter);
+      history.replaceState(null, '', '#' + btn.dataset.filter);
     });
   });
+
+  // Apply filter from URL hash (e.g. katalog.html#vozila)
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    applyFilter(hash);
+  }
 }
 
 // ---- Contact Form ----
